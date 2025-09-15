@@ -1,0 +1,101 @@
+@font-face {
+  font-family: text;
+  src: url(Rubik/Rubik-Italic-VariableFont_wght.ttf);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+main {
+
+   
+    
+
+  height: 100vh;              /* ocupa toda la ventana visible */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: text;
+  position: relative;         /* no necesario para el fixed, pero queda ordenado */
+  overflow: hidden;
+  background: #ffeef0;        /* opcional */
+  padding: 20px;
+    background-image: url(real.png); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+
+}
+
+.title {
+  font-size: 94px;
+  color: #000000;
+  margin: 0;
+  filter: drop-shadow(1px 1px 8px red);
+  text-align: center;
+}
+
+/* contenedor centrado que reserva espacio para ambos botones */
+.btns {
+  width: 420px;               /* ancho fijo para mantener la apariencia centrada */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+/* tamaño común de botones - placeholder igualará este tamaño */
+.btn1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 28px;
+  cursor: pointer;
+  user-select: none;
+  font-family: text
+}
+
+/* botón SI: queda en el flujo, centrado */
+.si {
+  background-color: rgb(14, 184, 14);
+  z-index: 10;
+}
+
+/* placeholder: ocupa el espacio del NO (para que el SI esté centrado al inicio) */
+.no-placeholder {
+  display: inline-block;
+  width: 160px;   /* ancho igual al ancho aproximado del botón NO */
+  height: 60px;   /* alto igual al botón NO */
+}
+
+/* botón NO: fixed para moverse por TODO el viewport */
+.no {
+  position: fixed;                /* importante: relativo al viewport */
+  width: 160px;
+  height: 60px;
+  background-color: rgb(156, 18, 18);
+  border-radius: 12px;
+  z-index: 30;
+  transition: left 0.25s ease, top 0.25s ease, transform 0.12s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* pequeño "salto" visual cuando intenta tocarlo */
+.no:active { transform: scale(0.95); }
+
+.col{
+    background-color: red;
+    color: #fff;
+    border: none;
+}
